@@ -47,14 +47,26 @@ html { scroll-behavior: smooth; }
       border-radius: 3px;
     }
   }
-  .sidebar { transform: none; }
+  .sidebar { transform: none; min-width: 0; }
+  // The upstream profile row otherwise overflows the narrow desktop sidebar.
+  .profile_box { display: block; width: 100%; min-width: 0; }
+  .author__avatar { display: block; width: 175px; max-width: 100%; }
+  .author__content {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin-top: .8em;
+    overflow-wrap: anywhere;
+  }
   .author__monogram {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 175px;
-    height: 175px;
+    height: auto;
     max-width: 100%;
+    aspect-ratio: 1;
     border: 5px solid #fff;
     outline: 1px solid $border-color;
     border-radius: 50%;
@@ -64,7 +76,12 @@ html { scroll-behavior: smooth; }
     line-height: 1;
   }
   .author__native-name { margin: 0; }
-  .author__urls-wrapper { cursor: auto; }
+  .author__urls-wrapper {
+    display: block;
+    width: 100%;
+    margin: .8em 0 0;
+    cursor: auto;
+  }
   .author__urls {
     display: block;
     position: static;
@@ -154,19 +171,10 @@ html { scroll-behavior: smooth; }
     .greedy-nav .visible-links { width: 100%; }
     .greedy-nav .visible-links li { display: block; }
     .greedy-nav .visible-links a { margin: 0 1.25em 0 0; }
-    .profile_box {
-      display: grid;
-      grid-template-columns: 85px minmax(0, 1fr);
-      gap: .5em 1em;
-      align-items: center;
-    }
-    .author__avatar { width: 85px; }
-    .author__monogram { width: 85px; height: 85px; font-size: 1.8em; }
-    .author__content { display: block; padding: 0; }
+    .author__avatar { width: 100px; }
+    .author__monogram { width: 100px; font-size: 2em; }
     .author__name { margin: 0 0 .25em; }
     .author__bio { margin-top: .25em; }
-    .author__urls-wrapper { grid-column: 1 / -1; margin: 0; }
-    .author__urls { display: flex; flex-wrap: wrap; gap: .25em 1.25em; }
     .sidebar { margin-bottom: 1.5em; }
   }
   .js .upstream-homepage .nav-toggle { display: block; }

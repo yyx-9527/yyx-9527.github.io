@@ -4,7 +4,7 @@
 
 An English academic homepage based on [tangjyan/zh-cn](https://github.com/tangjyan/zh-cn) and [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io), retaining the upstream typography, sidebar, navigation, section headings, and compact publication lists.
 
-The content is based on Yixin Yang's CV. Papers are grouped as **Under Review (3)**, **Recent Publications (2)**, and **Working Papers (1)**, following the status-based organization of [Xiuze Zhou's homepage](https://zhouxiuze.com/). Under-review entries show the submitted journal in parentheses at the end. Working papers do not show a submission venue; published entries retain their publication details and verified DOI links and BibTeX citations. A text monogram is used in place of a personal photo.
+The content is based on Yixin Yang's CV and subsequent updates. Papers are ordered as **Working Papers (1)**, **Under Review (3)**, and **Recent Publications (2)**, following the status-based organization of [Xiuze Zhou's homepage](https://zhouxiuze.com/). Under-review entries show the submitted journal in parentheses at the end. Working papers do not show a submission venue; published entries retain their publication details and verified DOI links and BibTeX citations. A text monogram is used in place of a personal photo.
 
 ## Content
 
@@ -12,7 +12,7 @@ The homepage includes a biography, research interests, education, publications, 
 
 - Original Jekyll theme layout with responsive navigation and keyboard support.
 - Publication status is explicit; manuscripts under review are not presented as published work.
-- Yixin Yang is shown in bold. Corresponding authors are marked with an asterisk only where indicated in the CV; unmarked entries remain unmarked.
+- Yixin Yang is shown in bold. Corresponding authors are marked with an asterisk where indicated in the CV or subsequently confirmed by the author.
 - DOI links, expandable BibTeX, and citation copying over HTTPS or localhost.
 - Empty profile links and content sections are hidden.
 - Local fonts and icons; analytics and Google Scholar statistics are disabled by default.

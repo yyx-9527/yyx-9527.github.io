@@ -64,7 +64,7 @@ author:
     替换为该论文的真实 BibTeX 条目。
 ```
 
-已发表论文的年份使用数字；在投和准备投稿论文可省略年份。`status` 为必填项：`published` 显示在 Recent Publications，`under_review` 显示在 Under Review，`in_preparation` 显示在 Working Papers。页面先展示 Under Review，再展示 Recent Publications，最后单列 Working Papers；各组独立编号。
+已发表论文的年份使用数字；在投和准备投稿论文可省略年份。`status` 为必填项：`published` 显示在 Recent Publications，`under_review` 显示在 Under Review，`in_preparation` 显示在 Working Papers。页面依次展示 Working Papers、Under Review、Recent Publications，各组独立编号。
 
 在投论文的 `venue` 为投递期刊，显示在条目末尾的括号内；准备投稿论文不显示投递期刊；已发表论文的 `venue` 为正式发表期刊或会议，以正常文献信息展示，不加投递期刊标注。
 

@@ -2,6 +2,16 @@
 <section id="publications" class="academic-section" aria-labelledby="publications-title">
   <h2 id="publications-title" class="section-title"><span aria-hidden="true">📝</span> Publications</h2>
   {% if site.google_scholar_stats_enabled %}<p id="total-citations" hidden></p>{% endif %}
+  {% assign in_preparation = site.data.publications | where: 'status', 'in_preparation' %}
+  {% if in_preparation.size > 0 %}
+  <h3 id="working-papers" class="publication-group-title">Working Papers</h3>
+  <ol class="publication-list">
+    {% for paper in in_preparation %}
+    {% capture paper_id %}preparation-{{ forloop.index }}{% endcapture %}
+    <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
+    {% endfor %}
+  </ol>
+  {% endif %}
   {% assign under_review = site.data.publications | where: 'status', 'under_review' %}
   {% if under_review.size > 0 %}
   <h3 id="under-review" class="publication-group-title">Under Review</h3>
@@ -18,16 +28,6 @@
   <ol class="publication-list">
     {% for paper in published %}
     {% capture paper_id %}published-{{ forloop.index }}{% endcapture %}
-    <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
-    {% endfor %}
-  </ol>
-  {% endif %}
-  {% assign in_preparation = site.data.publications | where: 'status', 'in_preparation' %}
-  {% if in_preparation.size > 0 %}
-  <h3 id="working-papers" class="publication-group-title">Working Papers</h3>
-  <ol class="publication-list">
-    {% for paper in in_preparation %}
-    {% capture paper_id %}preparation-{{ forloop.index }}{% endcapture %}
     <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
     {% endfor %}
   </ol>

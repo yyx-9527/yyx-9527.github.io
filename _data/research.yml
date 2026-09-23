@@ -2,5 +2,3 @@
   description: "N-coalition games, Nash equilibrium seeking, and equilibrium tracking under incomplete information."
 - title: "Networked systems and cooperative control"
   description: "Switching topologies, prescribed-time convergence, and asynchronous sampled-data algorithms."
-- title: "Damage mechanics and multiphysics modeling"
-  description: "Thermal, phase-change, and solid mechanics simulations of transmission tower damage under ice loads."
