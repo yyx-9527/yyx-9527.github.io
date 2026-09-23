@@ -1,21 +1,16 @@
-<div class="masthead">
+<header class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
-            <a href="https://tangjyan.github.io/" target="_self">
-              <img class="svg" src="/images/en.svg" width="20pt"> 
-              English
-            </a>
-          </li>
-          {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">{{ site.author.initials | escape }}</span>
+      <span>{{ site.author.name_en | default: site.author.handle | escape }}<span class="brand-divider" aria-hidden="true"> / </span><span class="brand-label">学术主页</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" hidden><span>菜单</span><i class="fas fa-bars" aria-hidden="true"></i></button>
+    <nav id="primary-nav" aria-label="主导航">
+      <ul class="site-links">
+        {% for link in site.data.navigation.main %}
+        <li><a href="{{ '/' | relative_url }}{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
-</div>
+</header>

@@ -1,0 +1,6 @@
+{% if site.data.honors.size > 0 %}
+<section id="honors" class="academic-section" aria-labelledby="honors-title">
+  <div class="section-heading"><h2 id="honors-title">荣誉与奖励</h2><span lang="en">HONORS &amp; AWARDS</span></div>
+  <ul class="honors-list">{% for honor in site.data.honors %}<li><span>{{ honor.name | escape }}</span><span class="honor-award">{{ honor.award | escape }}</span></li>{% endfor %}</ul>
+</section>
+{% endif %}

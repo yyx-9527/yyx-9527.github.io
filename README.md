@@ -1,67 +1,54 @@
+# 杨译鑫 · Yixin Yang 的个人学术主页
 
-<h1 align="center">
-AcadHomepage
-</h1>
+基于 [tangjyan/zh-cn](https://github.com/tangjyan/zh-cn) 定制的中文 Jekyll 学术主页，保留 [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io) 的 MIT 许可与来源署名。
 
-<div align="center">
+主页内容根据本人提供的简历整理，包含电子科技大学与四川农业大学的学习经历、研究方向、科研项目和获奖信息。论文明确分为 **已发表（2 篇）**、**在投（3 篇）**、**准备投稿（1 篇）**；在投状态不代表接收或发表。两篇已发表论文附 DOI 与 BibTeX。头像使用姓名缩写。
 
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [English README](./docs/README-en.md) 
+[访问主页](https://yyx-9527.github.io/) · [源代码](https://github.com/yyx-9527/yyx-9527.github.io) · [部署状态](https://github.com/yyx-9527/yyx-9527.github.io/actions/workflows/pages.yml)
 
-</div>
+## 页面与维护
 
-<p align="center">一个现代、响应式的个人学术主页</p>
+- 桌面双栏布局，移动端折叠菜单；支持键盘导航与减少动画偏好。
+- 个人简介、研究方向、论文列表、科研项目、教育经历、荣誉与奖励、联系方式。
+- 论文按年份分组，可添加摘要、BibTeX、PDF、代码与 DOI 链接。
+- 未填写的个人链接自动隐藏；空列表显示待补充提示。
+- 不依赖远程字体；Google Analytics 和 Scholar 统计默认关闭。
+- GitHub Actions 自动构建和部署，PR 只运行构建检查。
 
+| 修改内容 | 文件 |
+| --- | --- |
+| 姓名、单位、邮箱、头像、学术链接 | `_config.yml` |
+| 个人简介 | `_pages/about.md` |
+| 研究方向 | `_data/research.yml` |
+| 论文 | `_data/publications.yml` |
+| 教育经历 | `_data/education.yml` |
+| 科研项目 | `_data/projects.yml` |
+| 荣誉与奖励 | `_data/honors.yml` |
+| 排版样式 | `_sass/_academic.scss` |
+| 菜单 | `_data/navigation.yml` |
 
-<p align="center">
-    <br>
-    <img src="docs/screenshot.png" width="100%"/>
-    <br>
-</p>
+填写方式与数据示例见 [内容维护指南](docs/CONTENT.md)。
 
-一些例子：
-- [样例页面](https://rayeren.github.io/acad-homepage.github.io/)
-- [作者的个人主页](https://rayeren.github.io/)
+## 本地运行
 
-## 主要特点
-- **自动更新谷歌学术引用**: 借助谷歌学术爬虫和github action功能，本仓库可以自动更新作者的引用数和论文引用数。
-- **支持谷歌Analytics**: 你可以通过简单的配置来实现使用谷歌Analytics跟踪网页的流量。
-- **响应式的**: 此主页会针对不同的屏幕尺寸自动调整布局。
-- **美观而简约**: 此主页美观而简约，适合个人学术主页的搭建。
-- **搜索引擎优化**: 搜索引擎优化 (SEO) 帮助搜索引擎轻松找到您在主页上发布的信息，然后将其与类似网站进行排名，并获得排名优势。
+需要 Ruby 3.3、Bundler；Windows 推荐 [RubyInstaller + Devkit](https://rubyinstaller.org/downloads/)。不会在启动脚本里自动安装系统级工具。
 
-## 快速开始
+```sh
+bundle install
+bundle exec jekyll serve --livereload --host 127.0.0.1
+```
 
-1. Fork本仓库到`USERNAME/USERNAME.github.io`，其中`USERNAME`是你的github用户名。
-1. 配置谷歌学术引用爬虫：
-    1. 在你的谷歌学术引用页面的url里找到你的谷歌学术ID：例如，在url https://scholar.google.com/citations?user=SCHOLAR_ID 中，`SCHOLAR_ID`部分即为你的谷歌学术ID。
-    1. 在github本仓库页面的`Settings -> Secrets -> Actions -> New repository secret`中，添加`GOOGLE_SCHOLAR_ID`变量：`name=GOOGLE_SCHOLAR_ID`、`value=SCHOLAR_ID`。
-    1. 在github本仓库页面的`Action`中，点击*"I understand my workflows, go ahead and enable them"*启用workflows by clicking *"。本action将会谷歌学术引用的统计量数据`gs_data.json`到本仓库的`google-scholar-stats`分支中。每次修改main分支的内容会触发该action。本action也会在每天08:00 UTC定时触发。
-1. 使用 [favicon-generator](https://redketchup.io/favicon-generator)生成favicon（网页icon文件），并下载所有文件到`REPO/images`。
-1. 修改主页配置文件[_config.yml](../_config.yml):
-    1. `title`: 主页标题
-    1. `description`: 主页的描述
-    1. `repository`: USER_NAME/REPO_NAME  
-    1. `google_analytics_id` (可选的): 谷歌Analytics ID
-    1. SEO相关的键值 (可选的): 从搜索引擎的控制台里获得对应的ID (例如：Google, Bing and Baidu)，然后粘贴到这里。
-    1. `author`: 主页作者信息，包括其他网页、Email、所在城市、大学等。
-    1. `google_scholar_stats_use_cdn`: 使用CDN读取存储于`https://raw.githubusercontent.com/`的google scholar引用统计数据，防止中国大陆地区被墙无法访问的情况。但是CDN有缓存，因此`google_scholar_stats_use_cdn : True`时，引用数据更新会有延迟。
-    1. 更多的配置信息在注释中有详细描述。
-1. 将你的主页内容添加到 [_pages/about.md](../_pages/about.md).
-1. 你的主页将会被部署到`https://USERNAME.github.io`.
+访问 `http://127.0.0.1:4000`。macOS / Linux 也可运行 `bash run_server.sh`。修改 `_config.yml` 后重启服务。
 
-## 本地调试
+Windows 推荐运行 `run_server.bat` 或 `python scripts/preview.py`（需要 Python 3.10+）。该启动器会将源码复制到临时英文路径后构建，以兼容本项目的中文目录名；构建缓存也保存在临时目录。本次会话已准备便携 Ruby 工具链，启动器可自动发现；临时目录被系统清理后需安装 Ruby + Devkit。使用此启动器修改源码后需重新启动预览，不会自动刷新。
 
-1. 使用`git clone`将本项目克隆到本地。
-1. 安装Jekyll的构建环境，包括`Ruby`、`RubyGems`、`GCC`和`Make`。可参考[该教程](https://jekyllrb.com/docs/installation/#requirements)。
-1. 运行 `bash run_server.sh` 来启动Jekyll实时重载服务器。
-1. 在浏览器里打开 [http://127.0.0.1:4000](http://127.0.0.1:4000)。如果你修改了网页的源码，服务器会自动重新编译并刷新页面。
-1. 当你修改完毕你的页面以后, 使用`git`命令，`commit`你的改动并`push`到你的github仓库中。
+```sh
+bundle exec jekyll build
+python scripts/check_site.py _site
+```
 
-# Acknowledges
+## 开源与发布
 
-- AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
-- AcadHomepage is influenced by the github repo [mmistakes/minimal-mistakes](https://github.com/mmistakes/minimal-mistakes), which is distributed under the MIT License.
-- AcadHomepage is influenced by the github repo [academicpages/academicpages.github.io](https://github.com/academicpages/academicpages.github.io), which is distributed under the MIT License.
+使用 **yyx-9527** 账号创建公开仓库 **yyx-9527.github.io**，推送源码并在 **Settings → Pages** 选择 **GitHub Actions**。完整步骤见 [部署指南](docs/DEPLOY.md)。
+
+源码使用 [MIT License](LICENSE)。第三方资源来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。个人论文、头像和简历应只添加你有权公开的材料。

@@ -1,3 +1,16 @@
 _site/
-push.sh
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+.tools/
+node_modules/
 .DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

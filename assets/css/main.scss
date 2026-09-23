@@ -107,3 +107,6 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+// 本站定制；保留上游主题，使用独立文件管理覆盖样式。
+@import "academic";

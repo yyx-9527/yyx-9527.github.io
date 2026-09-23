@@ -1,42 +1,42 @@
----
-layout: compress
----
-
 <!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
-
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    <div id="main" role="main">
-      {% include sidebar.html %}
-    
-      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-        <div class="page__inner-wrap">
-          <section class="page__content" itemprop="text">
-            {{ content }}
-          </section>
+<html lang="{{ site.lang | default: 'zh-CN' }}" class="no-js">
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
+</head>
+<body class="academic">
+  <a class="skip-link" href="#main">跳转到正文</a>
+  {% include masthead.html %}
+  <main id="main" class="academic-layout">
+    {% include sidebar.html %}
+    <article class="page">
+      <section id="about-me" class="academic-section intro-section" aria-labelledby="about-title">
+        <div class="section-eyebrow"><span>关于我</span><span lang="en">ABOUT ME</span></div>
+        <h1 id="about-title">个人简介<span class="title-dot" aria-hidden="true">.</span></h1>
+        <div class="intro-content">{{ content }}</div>
+        <a class="text-link intro-link" href="#publications">浏览论文列表 <span aria-hidden="true">↗</span></a>
+      </section>
+      {% include research.html %}
+      {% include publications.html %}
+      {% include projects.html %}
+      {% include education.html %}
+      {% include honors.html %}
+      <section id="contact" class="academic-section contact-section" aria-labelledby="contact-title">
+        <div class="section-heading"><h2 id="contact-title">联系方式</h2><span lang="en">CONTACT</span></div>
+        <p>欢迎围绕研究与学术交流保持联系。</p>
+        <div class="contact-links">
+          {% if site.author.email and site.author.email != empty %}
+          <a class="contact-email" href="mailto:{{ site.author.email | escape }}"><i class="fas fa-envelope" aria-hidden="true"></i>{{ site.author.email | escape }} <span aria-hidden="true">↗</span></a>
+          {% else %}<span class="muted">邮箱待补充</span>{% endif %}
+          {% if site.author.github and site.author.github != empty %}<a href="https://github.com/{{ site.author.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
         </div>
-      </article>
-    </div>
-
-    {% include scripts.html %}
-
-<div class="footer_site">
-<hr/>
-<div class="footer_copyright">
-  © 2022 华中大 · 唐健 | 基于&nbsp
-  <a class="page_a"  href="https://github.com/RayeRen/acad-homepage.github.io">
-  acad
-  </a>&nbsp模板
-</div>
-</div>
-  </body>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div><span>© {{ site.time | date: '%Y' }} {{ site.author.name | escape }}</span><span class="footer-note">记录探索，分享研究。</span></div>
+    <div class="footer-credits">基于 <a href="https://github.com/tangjyan/zh-cn">tangjyan/zh-cn</a> · <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> · MIT</div>
+  </footer>
+  {% include scripts.html %}
+</body>
 </html>

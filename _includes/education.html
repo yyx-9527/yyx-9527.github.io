@@ -1,0 +1,12 @@
+<section id="education" class="academic-section" aria-labelledby="education-title">
+  <div class="section-heading"><h2 id="education-title">教育经历</h2><span lang="en">EDUCATION</span></div>
+  {% if site.data.education.size > 0 %}
+  <ol class="education-list">
+    {% for item in site.data.education %}
+    <li><span class="education-period">{{ item.period | escape }}</span><div><h3>{{ item.institution | escape }}</h3><p>{{ item.program | default: item.degree | escape }}{% if item.department and item.department != empty %} · {{ item.department | escape }}{% endif %}</p>{% if item.description and item.description != empty %}<p class="muted">{{ item.description | escape }}</p>{% endif %}</div></li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <div class="education-empty"><span class="timeline-dot" aria-hidden="true"></span><p>教育经历待补充</p></div>
+  {% endif %}
+</section>

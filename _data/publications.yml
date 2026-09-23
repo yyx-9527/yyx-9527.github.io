@@ -1,0 +1,66 @@
+# 已发表论文的题目、作者顺序和年份已与 Crossref DOI 元数据核对。
+# 在投与准备投稿状态来自本人提供的简历，后续请随进展更新。
+- title: "Analysis and Modeling of Transmission Tower Feet Damage Induced by Ice Load"
+  authors: "**Yixin Yang**, Junyan Yu, Jun Zhang"
+  year: 2025
+  status: "published"
+  venue: "2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)"
+  type: "会议论文"
+  note: "第一作者"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1109/ICoCTA66834.2025.11337498"
+  bibtex: |
+    @inproceedings{yang2025transmission,
+      author = {Yixin Yang and Junyan Yu and Jun Zhang},
+      title = {Analysis and Modeling of Transmission Tower Feet Damage Induced by Ice Load},
+      booktitle = {2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)},
+      year = {2025},
+      doi = {10.1109/ICoCTA66834.2025.11337498}
+    }
+
+- title: "Modeling and Analysis of Power Transmission Tower Base Under Static Ice Pressure"
+  authors: "Jun Zhang, Junyan Yu, **Yixin Yang**"
+  year: 2025
+  status: "published"
+  venue: "2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)"
+  type: "会议论文"
+  note: "共同作者"
+  links:
+    - label: "DOI"
+      url: "https://doi.org/10.1109/ICoCTA66834.2025.11337299"
+  bibtex: |
+    @inproceedings{zhang2025tower,
+      author = {Jun Zhang and Junyan Yu and Yixin Yang},
+      title = {Modeling and Analysis of Power Transmission Tower Base Under Static Ice Pressure},
+      booktitle = {2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)},
+      year = {2025},
+      doi = {10.1109/ICoCTA66834.2025.11337299}
+    }
+
+- title: "Distributed Nash Equilibrium Seeking for N-Coalition Games Under Incomplete Information"
+  authors: "**Yixin Yang**, Junyan Yu, Jun Zhang"
+  status: "under_review"
+  venue: "IEEE Transactions on Control of Network Systems"
+  type: "在投论文"
+  note: "第一作者"
+
+- title: "Prescribed-Time Nash Equilibrium Seeking for Incomplete-Information N-Coalition Games Under Switching Topologies"
+  authors: "**Yixin Yang**, Junyan Yu"
+  status: "under_review"
+  venue: "Communications in Nonlinear Science and Numerical Simulation"
+  type: "在投论文"
+  note: "第一作者"
+
+- title: "Failure analysis of transmission tower legs under ice loads induced by the freezing of ponded water"
+  authors: "Hongyu Tian, Yu Zhang, **Yixin Yang**, Jun Zhang"
+  status: "under_review"
+  venue: "Engineering Failure Analysis"
+  type: "在投论文"
+  note: "共同作者"
+
+- title: "Robust Asynchronous Sampled-Data Nash Equilibrium Tracking for N-Coalition Games With Incomplete Information Under Switching Topologies"
+  authors: "**Yixin Yang**, Junyan Yu"
+  status: "in_preparation"
+  type: "准备投稿"
+  note: "第一作者"

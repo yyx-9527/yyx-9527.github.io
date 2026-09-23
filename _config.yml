@@ -1,163 +1,79 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# 修改此文件后，需要重新启动本地 Jekyll 服务。
+title: "杨译鑫 | Yixin Yang · 学术主页"
+description: "杨译鑫，电子科技大学数学专业。关注 N 联盟博弈、分布式纳什均衡求解与输电杆塔损伤建模。"
+url: "https://yyx-9527.github.io"
+baseurl: ""
+repository: "yyx-9527/yyx-9527.github.io"
+lang: zh-CN
+timezone: Asia/Shanghai
 
-# Site Settings
-title                    : "唐健"
-description              : "电磁无损检测"
-repository               : "tangjyan/tangjyan.github.io"
-google_scholar_stats_use_cdn : false
-
-# google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
-
-# SEO Related
-google_site_verification :  fQZQD0EwLaSOrp3EbALt2rjxHEY9pUvWuh1fS96xgNk # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   : 56D1B3DBCF345410DA9431AFE01788E7 # get bing_site_verification from https://www.bing.com/webmasters/about
-baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
-
-# Site Author
+# 个人信息整理自本人提供的简历。空链接不会出现在页面上。
 author:
-  name             : "唐健"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "华中科技大学"
-  location         : "湖北 武汉"
-  employer         : #"Hefei General Machinery Research Institute"
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=WMkMTb4AAAAJ"
-  email            : "tangj@hust.edu.cn"
-  researchgate     : "https://www.researchgate.net/profile/Jian-Tang-53"
-  uri              : 
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "tangjyan"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm           :
-  linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : "https://orcid.org/0000-0001-9658-209X"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : 
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  name: "杨译鑫"
+  name_en: "Yixin Yang"
+  initials: "YYX"
+  handle: "yyx-9527"
+  avatar: "" # 例如 /images/avatar.jpg；留空显示姓名缩写
+  bio: "电子科技大学 · 数学"
+  location: ""
+  email: "17628134116@163.com"
+  github: "yyx-9527"
+  googlescholar: ""
+  orcid: ""
+  researchgate: ""
+  cv: "" # 例如 /files/cv.pdf
 
+profile_incomplete: false
+google_scholar_stats_enabled: false
+google_scholar_stats_use_cdn: false
+google_analytics_id: ""
+google_site_verification: ""
+bing_site_verification: ""
+baidu_site_verification: ""
 
-# Reading Files
 include:
-  - .htaccess
   - _pages
-  - files
 exclude:
   - docs
+  - scripts
   - google_scholar_crawler
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
+  - vendor
+  - node_modules
   - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
   - .github
-  - CHANGELOG
-  - Capfile
+  - .tools
   - Gemfile
-  - Gruntfile.js
+  - Gemfile.lock
+  - README.md
   - LICENSE
-  - README
-  - Rakefile
+  - THIRD_PARTY_NOTICES.md
+  - run_server.bat
+  - run_server.sh
+  - package.json
+  - package-lock.json
+  - "*.log"
   - assets/js/_main.js
+  - assets/js/main.min.js
   - assets/js/plugins
   - assets/js/vendor
-  - config
-  - gulpfile.js
-  - log
-  - node_modules
-  - package.json
-  - tmp
-  - vendor
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
-# Conversion
+  - assets/js/collapse.js
+  - assets/css/collapse.css
+encoding: utf-8
 markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# Defaults
 defaults:
-  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: default
       author_profile: true
-
-
-# Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins
+  style: compressed
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
