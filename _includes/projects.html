@@ -1,10 +1,10 @@
 {% if site.data.projects.size > 0 %}
 <section id="projects" class="academic-section" aria-labelledby="projects-title">
-  <div class="section-heading"><h2 id="projects-title">科研项目</h2><span lang="en">RESEARCH PROJECTS</span></div>
+  <h2 id="projects-title" class="section-title"><span aria-hidden="true">💻</span> Research Projects</h2>
   {% for project in site.data.projects %}
   <article class="research-project">
-    <div class="project-meta"><span>{{ project.period | escape }}</span><span>{{ project.role | escape }}</span></div>
     <h3>{{ project.title | escape }}</h3>
+    <p><em>{{ project.period | escape }}</em> · {{ project.role | escape }}</p>
     <p>{{ project.description | escape }}</p>
     <ul>{% for contribution in project.contributions %}<li>{{ contribution | escape }}</li>{% endfor %}</ul>
   </article>

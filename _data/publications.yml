@@ -2,11 +2,12 @@
 # 在投与准备投稿状态来自本人提供的简历，后续请随进展更新。
 - title: "Analysis and Modeling of Transmission Tower Feet Damage Induced by Ice Load"
   authors: "**Yixin Yang**, Junyan Yu, Jun Zhang"
+  corresponding_authors: ["Junyan Yu"]
   year: 2025
   status: "published"
   venue: "2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)"
-  type: "会议论文"
-  note: "第一作者"
+  type: "Conference paper"
+  note: "First author"
   links:
     - label: "DOI"
       url: "https://doi.org/10.1109/ICoCTA66834.2025.11337498"
@@ -24,8 +25,8 @@
   year: 2025
   status: "published"
   venue: "2025 IEEE 5th International Conference on Control Theory and Applications (ICoCTA)"
-  type: "会议论文"
-  note: "共同作者"
+  type: "Conference paper"
+  note: "Co-author"
   links:
     - label: "DOI"
       url: "https://doi.org/10.1109/ICoCTA66834.2025.11337299"
@@ -40,27 +41,30 @@
 
 - title: "Distributed Nash Equilibrium Seeking for N-Coalition Games Under Incomplete Information"
   authors: "**Yixin Yang**, Junyan Yu, Jun Zhang"
+  corresponding_authors: ["Junyan Yu"]
   status: "under_review"
   venue: "IEEE Transactions on Control of Network Systems"
-  type: "在投论文"
-  note: "第一作者"
+  type: "Manuscript under review"
+  note: "First author"
 
 - title: "Prescribed-Time Nash Equilibrium Seeking for Incomplete-Information N-Coalition Games Under Switching Topologies"
   authors: "**Yixin Yang**, Junyan Yu"
+  corresponding_authors: ["Junyan Yu"]
   status: "under_review"
   venue: "Communications in Nonlinear Science and Numerical Simulation"
-  type: "在投论文"
-  note: "第一作者"
+  type: "Manuscript under review"
+  note: "First author"
 
 - title: "Failure analysis of transmission tower legs under ice loads induced by the freezing of ponded water"
   authors: "Hongyu Tian, Yu Zhang, **Yixin Yang**, Jun Zhang"
   status: "under_review"
   venue: "Engineering Failure Analysis"
-  type: "在投论文"
-  note: "共同作者"
+  type: "Manuscript under review"
+  note: "Co-author"
 
 - title: "Robust Asynchronous Sampled-Data Nash Equilibrium Tracking for N-Coalition Games With Incomplete Information Under Switching Topologies"
   authors: "**Yixin Yang**, Junyan Yu"
+  corresponding_authors: ["Junyan Yu"]
   status: "in_preparation"
-  type: "准备投稿"
-  note: "第一作者"
+  type: "Working paper"
+  note: "First author"

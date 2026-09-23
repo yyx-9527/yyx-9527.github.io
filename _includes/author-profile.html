@@ -1,25 +1,26 @@
 {% assign author = site.author %}
-<div class="profile-card" itemscope itemtype="https://schema.org/Person">
-  {% if author.avatar and author.avatar != empty %}
-  <img class="profile-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name | escape }}的头像" width="180" height="180" itemprop="image">
-  {% else %}
-  <div class="profile-monogram" role="img" aria-label="{{ author.name | escape }}的姓名缩写"><span>{{ author.initials | escape }}</span><span class="monogram-caption" lang="en">ACADEMIC PROFILE</span></div>
-  {% endif %}
-  <div class="profile-identity">
-    <p class="profile-label" lang="en">PERSONAL HOMEPAGE</p>
-    <h2 class="profile-name" itemprop="name">{{ author.name | escape }}</h2>
-    {% if author.name_en and author.name_en != empty %}<p class="profile-name-en" lang="en">{{ author.name_en | escape }}</p>{% endif %}
-    <p class="profile-bio" itemprop="affiliation">{{ author.bio | escape }}</p>
-    {% if author.location and author.location != empty %}<p class="profile-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ author.location | escape }}</p>{% endif %}
-    {% if site.profile_incomplete %}<span class="profile-status"><span aria-hidden="true"></span>资料待完善</span>{% endif %}
+<div class="profile_box" itemscope itemtype="https://schema.org/Person">
+  <div class="author__avatar">
+    {% if author.avatar and author.avatar != empty %}
+    <img src="{{ author.avatar | relative_url }}" alt="{{ author.name | escape }}" width="175" height="175" itemprop="image">
+    {% else %}
+    <div class="author__monogram" aria-hidden="true">{{ author.initials | escape }}</div>
+    {% endif %}
   </div>
-  <ul class="profile-links">
-    {% if author.email and author.email != empty %}<li><a href="mailto:{{ author.email | escape }}" itemprop="email"><i class="fas fa-envelope" aria-hidden="true"></i><span>电子邮箱</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-    {% if author.googlescholar and author.googlescholar != empty %}<li><a href="{{ author.googlescholar | escape }}" itemprop="sameAs"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-    {% if author.orcid and author.orcid != empty %}<li><a href="{{ author.orcid | escape }}" itemprop="sameAs"><i class="fas fa-id-badge" aria-hidden="true"></i><span>ORCID</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-    {% if author.github and author.github != empty %}<li><a href="https://github.com/{{ author.github | escape }}" itemprop="sameAs"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-    {% if author.researchgate and author.researchgate != empty %}<li><a href="{{ author.researchgate | escape }}" itemprop="sameAs"><i class="fab fa-researchgate" aria-hidden="true"></i><span>ResearchGate</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-    {% if author.cv and author.cv != empty %}<li><a href="{{ author.cv | relative_url }}"><i class="fas fa-file-pdf" aria-hidden="true"></i><span>个人简历</span><span aria-hidden="true">↗</span></a></li>{% endif %}
-  </ul>
-  <div class="profile-footnote"><span class="profile-rule"></span><p>研究 · 记录 · 分享</p></div>
+  <div class="author__content">
+    <h2 class="author__name" itemprop="name">{{ author.name | escape }}</h2>
+    {% if author.name_zh and author.name_zh != empty %}<p class="author__native-name" lang="zh-CN">{{ author.name_zh | escape }}</p>{% endif %}
+    <p class="author__bio" itemprop="affiliation">{{ author.bio | escape }}</p>
+  </div>
+  <div class="author__urls-wrapper">
+    <ul class="author__urls">
+      {% if author.location and author.location != empty %}<li><i class="fas fa-map-marker-alt fa-fw" aria-hidden="true"></i> {{ author.location | escape }}</li>{% endif %}
+      {% if author.email and author.email != empty %}<li><a href="mailto:{{ author.email | escape }}" itemprop="email"><i class="fas fa-envelope fa-fw" aria-hidden="true"></i> Email</a></li>{% endif %}
+      {% if author.googlescholar and author.googlescholar != empty %}<li><a href="{{ author.googlescholar | escape }}" itemprop="sameAs"><i class="fas fa-graduation-cap fa-fw" aria-hidden="true"></i> Google Scholar</a></li>{% endif %}
+      {% if author.orcid and author.orcid != empty %}<li><a href="{{ author.orcid | escape }}" itemprop="sameAs"><i class="fas fa-id-badge fa-fw" aria-hidden="true"></i> ORCID</a></li>{% endif %}
+      {% if author.github and author.github != empty %}<li><a href="https://github.com/{{ author.github | escape }}" itemprop="sameAs"><i class="fab fa-github fa-fw" aria-hidden="true"></i> GitHub</a></li>{% endif %}
+      {% if author.researchgate and author.researchgate != empty %}<li><a href="{{ author.researchgate | escape }}" itemprop="sameAs"><i class="fab fa-researchgate fa-fw" aria-hidden="true"></i> ResearchGate</a></li>{% endif %}
+      {% if author.cv and author.cv != empty %}<li><a href="{{ author.cv | relative_url }}"><i class="fas fa-file-pdf fa-fw" aria-hidden="true"></i> Curriculum Vitae</a></li>{% endif %}
+    </ul>
+  </div>
 </div>

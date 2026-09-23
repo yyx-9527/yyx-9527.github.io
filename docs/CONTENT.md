@@ -1,6 +1,6 @@
 # 填写个人资料
 
-当前个人信息已根据本人简历填写。更新资料时直接修改以下文件；清空某个列表后会显示待补充提示。
+当前个人信息已根据本人简历填写，主页以英文为主。更新资料时直接修改以下文件；清空某个列表后会隐藏对应栏目。
 
 ## 姓名、邮箱、头像与链接
 
@@ -8,18 +8,19 @@
 
 ```yaml
 author:
-  name: "你的姓名"
+  name: "Yixin Yang" # 英文显示名
+  name_zh: "杨译鑫" # 中文姓名作为补充
   initials: "姓名缩写"
   handle: "yyx-9527"
-  avatar: "/images/avatar.jpg"
-  bio: "你的单位 · 职位"
+  avatar: "" # 当前按要求使用文字头像，不上传照片
+  bio: "Your institution · Research area"
   location: "你的城市"
   email: "你的公开联系邮箱"
   github: "yyx-9527"
   googlescholar: "" # 完整网址
   orcid: "" # 完整网址
   researchgate: ""
-  cv: "/files/cv.pdf"
+  cv: ""
 ```
 
 只设置存在的文件。头像放入 `images`，简历放入自行创建的 `files` 目录；暂时没有则留空。网址必须填写完整的 HTTPS 地址。站点标题和描述位于同一配置文件的开头。
@@ -30,7 +31,7 @@ author:
 
 ## 研究方向
 
-将 `_data/research.yml` 中的 `[]` 替换为列表：
+在 `_data/research.yml` 中增删或修改列表条目，使用英文标题和描述：
 
 ```yaml
 - title: "你的研究方向"
@@ -39,11 +40,12 @@ author:
 
 ## 论文列表
 
-将 `_data/publications.yml` 中的 `[]` 替换为真实论文列表。下面仅为格式示例，不是学术成果：
+在 `_data/publications.yml` 中维护真实论文列表。下面仅为格式示例，不是学术成果：
 
 ```yaml
 - title: "论文的真实标题"
-  authors: "**你的姓名**, 合作者姓名"
+  authors: "**Yixin Yang**, Co-author Name"
+  corresponding_authors: ["Co-author Name"] # 仅填写已经确认的通讯作者
   year: 2026
   status: "published" # published / under_review / in_preparation
   venue: "期刊或会议名称"
@@ -62,11 +64,17 @@ author:
     替换为该论文的真实 BibTeX 条目。
 ```
 
-已发表论文的年份使用数字；在投和准备投稿论文可省略年份。`status` 为必填项，分别对应已发表、在投、准备投稿；论文先按状态分组，已发表论文再按年份降序分组。作者字段支持 Markdown，推荐用 `**姓名**` 突出自己。摘要和 BibTeX 可展开。提供 BibTeX 时，在支持剪贴板的 HTTPS 或 localhost 页面上会出现复制按钮。删除不需要的字段即可，不要放置无效链接。
+已发表论文的年份使用数字；在投和准备投稿论文可省略年份。`status` 为必填项：`published` 显示在 Recent Publications，`under_review` 显示在 Under Review，`in_preparation` 显示在 Working Papers。页面先展示 Under Review，再展示 Recent Publications，最后单列 Working Papers；各组独立编号。
+
+在投论文的 `venue` 为投递期刊，显示在条目末尾的括号内；准备投稿论文不显示投递期刊；已发表论文的 `venue` 为正式发表期刊或会议，以正常文献信息展示，不加投递期刊标注。
+
+组内顺序与 YAML 文件一致，维护时可将新论文放在同组前面。作者字段支持 Markdown，使用 `**Yixin Yang**` 将本人姓名加粗。`corresponding_authors` 为通讯作者英文全名列表，必须与 `authors` 中的拼写一致；模板自动在对应姓名后加上 `*`，并在列表下解释 `* Corresponding author.`。没有明确标注通讯作者时，省略该字段，不依据第一作者身份推断。
+
+摘要和 BibTeX 可展开。提供 BibTeX 时，在支持剪贴板的 HTTPS 或 localhost 页面上会出现复制按钮。删除不需要的字段即可，不要放置无效链接。
 
 ## 教育经历
 
-将 `_data/education.yml` 中的 `[]` 替换为：
+在 `_data/education.yml` 中维护以下条目，使用英文学校和专业名称：
 
 ```yaml
 - period: "入学年份 — 毕业年份"

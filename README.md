@@ -1,54 +1,63 @@
-# 杨译鑫 · Yixin Yang 的个人学术主页
+# Yixin Yang's Academic Homepage
 
-基于 [tangjyan/zh-cn](https://github.com/tangjyan/zh-cn) 定制的中文 Jekyll 学术主页，保留 [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io) 的 MIT 许可与来源署名。
+[Homepage](https://yyx-9527.github.io/) · [Source code](https://github.com/yyx-9527/yyx-9527.github.io) · [Deployment status](https://github.com/yyx-9527/yyx-9527.github.io/actions/workflows/pages.yml)
 
-主页内容根据本人提供的简历整理，包含电子科技大学与四川农业大学的学习经历、研究方向、科研项目和获奖信息。论文明确分为 **已发表（2 篇）**、**在投（3 篇）**、**准备投稿（1 篇）**；在投状态不代表接收或发表。两篇已发表论文附 DOI 与 BibTeX。头像使用姓名缩写。
+An English academic homepage based on [tangjyan/zh-cn](https://github.com/tangjyan/zh-cn) and [AcadHomepage](https://github.com/RayeRen/acad-homepage.github.io), retaining the upstream typography, sidebar, navigation, section headings, and compact publication lists.
 
-[访问主页](https://yyx-9527.github.io/) · [源代码](https://github.com/yyx-9527/yyx-9527.github.io) · [部署状态](https://github.com/yyx-9527/yyx-9527.github.io/actions/workflows/pages.yml)
+The content is based on Yixin Yang's CV. Papers are grouped as **Under Review (3)**, **Recent Publications (2)**, and **Working Papers (1)**, following the status-based organization of [Xiuze Zhou's homepage](https://zhouxiuze.com/). Under-review entries show the submitted journal in parentheses at the end. Working papers do not show a submission venue; published entries retain their publication details and verified DOI links and BibTeX citations. A text monogram is used in place of a personal photo.
 
-## 页面与维护
+## Content
 
-- 桌面双栏布局，移动端折叠菜单；支持键盘导航与减少动画偏好。
-- 个人简介、研究方向、论文列表、科研项目、教育经历、荣誉与奖励、联系方式。
-- 论文按年份分组，可添加摘要、BibTeX、PDF、代码与 DOI 链接。
-- 未填写的个人链接自动隐藏；空列表显示待补充提示。
-- 不依赖远程字体；Google Analytics 和 Scholar 统计默认关闭。
-- GitHub Actions 自动构建和部署，PR 只运行构建检查。
+The homepage includes a biography, research interests, education, publications, honors and awards, research projects, and contact information. Chinese is retained for the native spelling of the author's name.
 
-| 修改内容 | 文件 |
+- Original Jekyll theme layout with responsive navigation and keyboard support.
+- Publication status is explicit; manuscripts under review are not presented as published work.
+- Yixin Yang is shown in bold. Corresponding authors are marked with an asterisk only where indicated in the CV; unmarked entries remain unmarked.
+- DOI links, expandable BibTeX, and citation copying over HTTPS or localhost.
+- Empty profile links and content sections are hidden.
+- Local fonts and icons; analytics and Google Scholar statistics are disabled by default.
+- GitHub Actions builds and deploys the site. Pull requests run build checks only.
+
+## Updating the site
+
+| Content | File |
 | --- | --- |
-| 姓名、单位、邮箱、头像、学术链接 | `_config.yml` |
-| 个人简介 | `_pages/about.md` |
-| 研究方向 | `_data/research.yml` |
-| 论文 | `_data/publications.yml` |
-| 教育经历 | `_data/education.yml` |
-| 科研项目 | `_data/projects.yml` |
-| 荣誉与奖励 | `_data/honors.yml` |
-| 排版样式 | `_sass/_academic.scss` |
-| 菜单 | `_data/navigation.yml` |
+| Name, affiliation, email, and profile links | `_config.yml` |
+| Biography | `_pages/about.md` |
+| Research interests | `_data/research.yml` |
+| Publications | `_data/publications.yml` |
+| Education | `_data/education.yml` |
+| Research projects | `_data/projects.yml` |
+| Honors and awards | `_data/honors.yml` |
+| Small additions to upstream styles | `_sass/_academic.scss` |
+| Navigation | `_data/navigation.yml` |
 
-填写方式与数据示例见 [内容维护指南](docs/CONTENT.md)。
+A detailed [content guide](docs/CONTENT.md) is available in Chinese for the site owner.
 
-## 本地运行
+## Local development
 
-需要 Ruby 3.3、Bundler；Windows 推荐 [RubyInstaller + Devkit](https://rubyinstaller.org/downloads/)。不会在启动脚本里自动安装系统级工具。
+Requires Ruby 3.3 and Bundler. Windows users can install [RubyInstaller with Devkit](https://rubyinstaller.org/downloads/).
 
 ```sh
 bundle install
 bundle exec jekyll serve --livereload --host 127.0.0.1
 ```
 
-访问 `http://127.0.0.1:4000`。macOS / Linux 也可运行 `bash run_server.sh`。修改 `_config.yml` 后重启服务。
+Open `http://127.0.0.1:4000`. On macOS or Linux, `bash run_server.sh` runs the same preview. Restart Jekyll after changing `_config.yml`.
 
-Windows 推荐运行 `run_server.bat` 或 `python scripts/preview.py`（需要 Python 3.10+）。该启动器会将源码复制到临时英文路径后构建，以兼容本项目的中文目录名；构建缓存也保存在临时目录。本次会话已准备便携 Ruby 工具链，启动器可自动发现；临时目录被系统清理后需安装 Ruby + Devkit。使用此启动器修改源码后需重新启动预览，不会自动刷新。
+For Windows projects in a directory with non-ASCII characters, use `run_server.bat` or `python scripts/preview.py` with Python 3.10+. This launcher copies the source to an ASCII temporary path before building. Restart it after editing source files; it does not watch for changes. A portable Ruby runtime prepared in the local setup is detected when present; if it has been removed, install Ruby with Devkit.
+
+Build and check internal links:
 
 ```sh
 bundle exec jekyll build
 python scripts/check_site.py _site
 ```
 
-## 开源与发布
+## Deployment
 
-使用 **yyx-9527** 账号创建公开仓库 **yyx-9527.github.io**，推送源码并在 **Settings → Pages** 选择 **GitHub Actions**。完整步骤见 [部署指南](docs/DEPLOY.md)。
+Changes pushed to `main` are built, checked, and deployed to [yyx-9527.github.io](https://yyx-9527.github.io/) by GitHub Actions. The Pages source is set to **GitHub Actions**. See the [deployment guide](docs/DEPLOY.md) for setup and recovery instructions.
 
-源码使用 [MIT License](LICENSE)。第三方资源来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。个人论文、头像和简历应只添加你有权公开的材料。
+## License and attribution
+
+Source code is distributed under the [MIT License](LICENSE). Upstream attribution is retained; see [third-party notices](THIRD_PARTY_NOTICES.md). The original CV and personal photo are not included in this repository.

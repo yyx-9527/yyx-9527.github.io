@@ -1,41 +1,40 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'zh-CN' }}" class="no-js">
+<html lang="{{ site.lang | default: 'en' }}" class="no-js">
 <head>
   {% include head.html %}
   {% include head/custom.html %}
 </head>
-<body class="academic">
-  <a class="skip-link" href="#main">跳转到正文</a>
+<body class="upstream-homepage">
+  <a class="skip-link" href="#main">Skip to content</a>
   {% include masthead.html %}
-  <main id="main" class="academic-layout">
+  <main id="main">
     {% include sidebar.html %}
     <article class="page">
-      <section id="about-me" class="academic-section intro-section" aria-labelledby="about-title">
-        <div class="section-eyebrow"><span>关于我</span><span lang="en">ABOUT ME</span></div>
-        <h1 id="about-title">个人简介<span class="title-dot" aria-hidden="true">.</span></h1>
-        <div class="intro-content">{{ content }}</div>
-        <a class="text-link intro-link" href="#publications">浏览论文列表 <span aria-hidden="true">↗</span></a>
-      </section>
-      {% include research.html %}
-      {% include publications.html %}
-      {% include projects.html %}
-      {% include education.html %}
-      {% include honors.html %}
-      <section id="contact" class="academic-section contact-section" aria-labelledby="contact-title">
-        <div class="section-heading"><h2 id="contact-title">联系方式</h2><span lang="en">CONTACT</span></div>
-        <p>欢迎围绕研究与学术交流保持联系。</p>
-        <div class="contact-links">
-          {% if site.author.email and site.author.email != empty %}
-          <a class="contact-email" href="mailto:{{ site.author.email | escape }}"><i class="fas fa-envelope" aria-hidden="true"></i>{{ site.author.email | escape }} <span aria-hidden="true">↗</span></a>
-          {% else %}<span class="muted">邮箱待补充</span>{% endif %}
-          {% if site.author.github and site.author.github != empty %}<a href="https://github.com/{{ site.author.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+      <div class="page__inner-wrap">
+        <div class="page__content">
+          <section id="about-me" class="academic-section" aria-labelledby="about-title">
+            <h1 id="about-title" class="visually-hidden">About Me</h1>
+            {{ content }}
+          </section>
+          {% include research.html %}
+          {% include education.html %}
+          {% include publications.html %}
+          {% include honors.html %}
+          {% include projects.html %}
+          <section id="contact" class="academic-section" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section-title"><span aria-hidden="true">✉️</span> Contact</h2>
+            <p>I welcome discussions and collaborations related to my research interests.</p>
+            {% if site.author.email and site.author.email != empty %}
+            <p>Email: <a class="contact-email" href="mailto:{{ site.author.email | escape }}">{{ site.author.email | escape }}</a></p>
+            {% endif %}
+          </section>
         </div>
-      </section>
+      </div>
     </article>
   </main>
-  <footer class="site-footer">
-    <div><span>© {{ site.time | date: '%Y' }} {{ site.author.name | escape }}</span><span class="footer-note">记录探索，分享研究。</span></div>
-    <div class="footer-credits">基于 <a href="https://github.com/tangjyan/zh-cn">tangjyan/zh-cn</a> · <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> · MIT</div>
+  <footer class="footer_site">
+    <hr>
+    <div class="footer_copyright">© {{ site.time | date: '%Y' }} {{ site.author.name | escape }} · Powered by <a href="https://github.com/tangjyan/zh-cn">tangjyan/zh-cn</a> and <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> · MIT</div>
   </footer>
   {% include scripts.html %}
 </body>

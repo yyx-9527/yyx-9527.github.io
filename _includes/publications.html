@@ -1,36 +1,39 @@
+{% if site.data.publications.size > 0 %}
 <section id="publications" class="academic-section" aria-labelledby="publications-title">
-  <div class="section-heading"><h2 id="publications-title">论文列表</h2><span lang="en">PUBLICATIONS</span></div>
-  {% if site.google_scholar_stats_enabled %}<p id="total-citations" class="citation-total" hidden></p>{% endif %}
-  {% if site.data.publications.size > 0 %}
-    {% assign published = site.data.publications | where: 'status', 'published' %}
-    {% if published.size > 0 %}
-    <h3 class="publication-group-title">已发表<span>{{ published.size }} 篇</span></h3>
-    {% assign years = published | group_by: 'year' | sort: 'name' | reverse %}
-    {% for year in years %}
-      <h4 class="publication-year">{{ year.name }}</h4>
-      {% for paper in year.items %}
-        {% capture paper_id %}published-{{ year.name }}-{{ forloop.index }}{% endcapture %}
-        {% include paper.html paper=paper paper_id=paper_id %}
-      {% endfor %}
-    {% endfor %}
-    {% endif %}
-    {% assign under_review = site.data.publications | where: 'status', 'under_review' %}
-    {% if under_review.size > 0 %}
-    <h3 class="publication-group-title">在投论文<span>{{ under_review.size }} 篇 · 尚未发表</span></h3>
+  <h2 id="publications-title" class="section-title"><span aria-hidden="true">📝</span> Publications</h2>
+  {% if site.google_scholar_stats_enabled %}<p id="total-citations" hidden></p>{% endif %}
+  {% assign under_review = site.data.publications | where: 'status', 'under_review' %}
+  {% if under_review.size > 0 %}
+  <h3 id="under-review" class="publication-group-title">Under Review</h3>
+  <ol class="publication-list">
     {% for paper in under_review %}
-      {% capture paper_id %}review-{{ forloop.index }}{% endcapture %}
-      {% include paper.html paper=paper paper_id=paper_id %}
+    {% capture paper_id %}review-{{ forloop.index }}{% endcapture %}
+    <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
     {% endfor %}
-    {% endif %}
-    {% assign in_preparation = site.data.publications | where: 'status', 'in_preparation' %}
-    {% if in_preparation.size > 0 %}
-    <h3 class="publication-group-title">准备投稿<span>{{ in_preparation.size }} 篇</span></h3>
-    {% for paper in in_preparation %}
-      {% capture paper_id %}preparation-{{ forloop.index }}{% endcapture %}
-      {% include paper.html paper=paper paper_id=paper_id %}
-    {% endfor %}
-    {% endif %}
-  {% else %}
-    <div class="empty-state publication-empty"><span class="empty-icon" aria-hidden="true"><i class="fas fa-file-alt"></i></span><div><h3>论文信息待补充</h3><p>论文题目、作者、发表年份及相关链接将在这里展示。</p></div></div>
+  </ol>
   {% endif %}
+  {% assign published = site.data.publications | where: 'status', 'published' %}
+  {% if published.size > 0 %}
+  <h3 id="recent-publications" class="publication-group-title">Recent Publications</h3>
+  <ol class="publication-list">
+    {% for paper in published %}
+    {% capture paper_id %}published-{{ forloop.index }}{% endcapture %}
+    <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  {% assign in_preparation = site.data.publications | where: 'status', 'in_preparation' %}
+  {% if in_preparation.size > 0 %}
+  <h3 id="working-papers" class="publication-group-title">Working Papers</h3>
+  <ol class="publication-list">
+    {% for paper in in_preparation %}
+    {% capture paper_id %}preparation-{{ forloop.index }}{% endcapture %}
+    <li>{% include paper.html paper=paper paper_id=paper_id %}</li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+  {% assign has_corresponding_author = false %}
+  {% for paper in site.data.publications %}{% if paper.corresponding_authors.size > 0 %}{% assign has_corresponding_author = true %}{% endif %}{% endfor %}
+  {% if has_corresponding_author %}<p class="publication-note"><sup>*</sup> Corresponding author.</p>{% endif %}
 </section>
+{% endif %}

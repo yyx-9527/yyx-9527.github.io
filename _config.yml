@@ -1,20 +1,21 @@
 # 修改此文件后，需要重新启动本地 Jekyll 服务。
-title: "杨译鑫 | Yixin Yang · 学术主页"
-description: "杨译鑫，电子科技大学数学专业。关注 N 联盟博弈、分布式纳什均衡求解与输电杆塔损伤建模。"
+title: "Yixin Yang's Homepage"
+description: "Yixin Yang studies mathematics at UESTC. His research interests include N-coalition games, distributed Nash equilibrium seeking, and transmission tower damage modeling."
 url: "https://yyx-9527.github.io"
 baseurl: ""
 repository: "yyx-9527/yyx-9527.github.io"
-lang: zh-CN
+lang: en
 timezone: Asia/Shanghai
 
 # 个人信息整理自本人提供的简历。空链接不会出现在页面上。
 author:
-  name: "杨译鑫"
+  name: "Yixin Yang"
   name_en: "Yixin Yang"
+  name_zh: "杨译鑫"
   initials: "YYX"
   handle: "yyx-9527"
   avatar: "" # 例如 /images/avatar.jpg；留空显示姓名缩写
-  bio: "电子科技大学 · 数学"
+  bio: "Mathematics · University of Electronic Science and Technology of China"
   location: ""
   email: "17628134116@163.com"
   github: "yyx-9527"

@@ -1,14 +1,18 @@
 {% assign paper = include.paper %}
+{% assign display_authors = paper.authors %}
+{% for corresponding_author in paper.corresponding_authors %}
+{% capture marked_name %}{{ corresponding_author | escape }}<sup class="corresponding-author" aria-label="Corresponding author">*</sup>{% endcapture %}
+{% assign display_authors = display_authors | replace: corresponding_author, marked_name %}
+{% endfor %}
 <article class="publication">
-  <div class="publication-body">
-    {% if paper.type and paper.type != empty %}<span class="paper-type">{{ paper.type | escape }}</span>{% endif %}
-    <h4>{{ paper.title | escape }}</h4>
-    <div class="paper-authors">{{ paper.authors | markdownify }}</div>
-    <p class="paper-venue">{% if paper.status == 'under_review' %}投稿期刊：{% endif %}{{ paper.venue | escape }}{% if paper.note and paper.note != empty %}<span class="paper-note">{{ paper.note | escape }}</span>{% endif %}</p>
-    {% if paper.links.size > 0 %}<div class="paper-links">{% for link in paper.links %}{% if link.url and link.url != empty %}{% assign first_char = link.url | slice: 0 %}<a href="{% if first_char == '/' %}{{ link.url | relative_url }}{% else %}{{ link.url | escape }}{% endif %}">{{ link.label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}{% endfor %}</div>{% endif %}
-    {% if paper.abstract and paper.abstract != empty %}<details class="paper-details"><summary>摘要</summary><div class="paper-abstract">{{ paper.abstract | markdownify }}</div></details>{% endif %}
+  <p class="paper-reference">{{ display_authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}. {{ paper.title | escape }}.{% if paper.status == 'published' %} <em>{{ paper.venue | escape }}</em>, {{ paper.year }}.{% if paper.note and paper.note != empty %} ({{ paper.note | escape }}){% endif %}{% elsif paper.status == 'under_review' and paper.venue and paper.venue != empty %} <span class="paper-submission">(<em>{{ paper.venue | escape }}</em>)</span>{% endif %}</p>
+  {% if paper.links.size > 0 or paper.bibtex or paper.abstract %}
+  <div class="paper-actions">
+    {% for link in paper.links %}{% if link.url and link.url != empty %}{% assign first_char = link.url | slice: 0 %}<a href="{% if first_char == '/' %}{{ link.url | relative_url }}{% else %}{{ link.url | escape }}{% endif %}">[{{ link.label | escape }}]</a>{% endif %}{% endfor %}
+    {% if paper.abstract and paper.abstract != empty %}<details class="paper-details"><summary>[Abstract]</summary><div class="paper-abstract">{{ paper.abstract | markdownify }}</div></details>{% endif %}
     {% if paper.bibtex and paper.bibtex != empty %}
-    <details class="paper-details"><summary>BibTeX</summary><div class="bibtex-wrap"><pre><code id="bibtex-{{ include.paper_id | strip }}">{{ paper.bibtex | escape }}</code></pre><button type="button" class="copy-bibtex" data-copy-target="bibtex-{{ include.paper_id | strip }}" hidden>复制引用</button><span class="copy-status" role="status" aria-live="polite"></span></div></details>
+    <details class="paper-details"><summary>[BibTeX]</summary><div class="bibtex-wrap"><pre><code id="bibtex-{{ include.paper_id | strip }}">{{ paper.bibtex | escape }}</code></pre><button type="button" class="copy-bibtex" data-copy-target="bibtex-{{ include.paper_id | strip }}" hidden>Copy citation</button><span class="copy-status" role="status" aria-live="polite"></span></div></details>
     {% endif %}
   </div>
+  {% endif %}
 </article>

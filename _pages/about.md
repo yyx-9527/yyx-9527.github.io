@@ -1,14 +1,14 @@
 ---
 permalink: /
 layout: default
-description: "杨译鑫的个人学术主页。研究兴趣包括 N 联盟博弈、分布式纳什均衡求解、网络系统控制，以及输电杆塔基础损伤建模。"
+description: "Yixin Yang's academic homepage: mathematics, N-coalition games, distributed Nash equilibrium seeking, and multiphysics modeling."
 redirect_from:
   - /about/
   - /about.html
 ---
 
-我目前在**电子科技大学**学习数学，此前就读于四川农业大学信息与计算科学专业。
+I am **Yixin Yang** (杨译鑫), currently studying Mathematics at the **University of Electronic Science and Technology of China (UESTC)**. Previously, I studied Information and Computing Science at **Sichuan Agricultural University**.
 
-我的研究围绕**不完全信息下的 N 联盟博弈与分布式纳什均衡求解**展开，关注切换拓扑、预设时间收敛及异步采样数据机制。同时，我参与严寒地区输电杆塔基础的损伤机理、安全评估与预警研究，将数学建模与多物理场仿真用于工程问题分析。
+My research focuses on **distributed Nash equilibrium seeking for N-coalition games under incomplete information**, with an emphasis on switching topologies, prescribed-time convergence, and asynchronous sampled-data mechanisms. I also work on damage mechanisms and safety assessment of transmission tower foundations in cold regions, combining mathematical modeling with multiphysics simulation.
 
-我重视严谨的问题分析与建模，也乐于与不同研究背景的同行交流。
+My published work includes two conference papers at ICoCTA 2025. Ongoing manuscripts are listed separately below.

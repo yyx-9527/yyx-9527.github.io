@@ -43,9 +43,9 @@
         const status = copyButton.parentElement.querySelector(".copy-status");
         try {
           await navigator.clipboard.writeText(citation.textContent.trim());
-          status.textContent = "引用已复制";
+          status.textContent = "Citation copied.";
         } catch {
-          status.textContent = "复制未成功，请选中上方引用手动复制。";
+          status.textContent = "Copy failed. Please select and copy the citation above.";
         }
       });
     });

@@ -89,8 +89,8 @@ def main():
         for url in re.findall(r"url\(\s*['\"]?([^)'\"]+)['\"]?\s*\)", path.read_text(encoding="utf-8")):
             check(url, path)
     home = pages[root / "index.html"]
-    if home.language != "zh-CN":
-        errors.append("Homepage language must be zh-CN.")
+    if home.language != "en":
+        errors.append("Homepage language must be en.")
     for section in ("about-me", "research", "publications", "education", "contact"):
         if section not in home.ids:
             errors.append(f"Homepage section missing: {section}")

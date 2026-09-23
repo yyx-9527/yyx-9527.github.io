@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return response.json();
   }).then(function (data) {
     if (Number.isFinite(data.citedby)) {
-      target.textContent = 'Google Scholar 总引用 ' + data.citedby;
+      target.textContent = 'Total Google Scholar citations: ' + data.citedby;
       target.hidden = false;
     }
   }).catch(function () { /* 引用服务不可用时，不影响页面内容。 */ });

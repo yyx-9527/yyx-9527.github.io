@@ -1,12 +1,10 @@
+{% if site.data.education.size > 0 %}
 <section id="education" class="academic-section" aria-labelledby="education-title">
-  <div class="section-heading"><h2 id="education-title">教育经历</h2><span lang="en">EDUCATION</span></div>
-  {% if site.data.education.size > 0 %}
-  <ol class="education-list">
+  <h2 id="education-title" class="section-title"><span aria-hidden="true">🎓</span> Education</h2>
+  <ul>
     {% for item in site.data.education %}
-    <li><span class="education-period">{{ item.period | escape }}</span><div><h3>{{ item.institution | escape }}</h3><p>{{ item.program | default: item.degree | escape }}{% if item.department and item.department != empty %} · {{ item.department | escape }}{% endif %}</p>{% if item.description and item.description != empty %}<p class="muted">{{ item.description | escape }}</p>{% endif %}</div></li>
+    <li><em>{{ item.period | escape }}</em>, <strong>{{ item.institution | escape }}</strong>, {{ item.program | default: item.degree | escape }}{% if item.department and item.department != empty %}, {{ item.department | escape }}{% endif %}.{% if item.description and item.description != empty %} {{ item.description | escape }}{% endif %}</li>
     {% endfor %}
-  </ol>
-  {% else %}
-  <div class="education-empty"><span class="timeline-dot" aria-hidden="true"></span><p>教育经历待补充</p></div>
-  {% endif %}
+  </ul>
 </section>
+{% endif %}

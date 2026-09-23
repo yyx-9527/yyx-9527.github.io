@@ -1,12 +1,11 @@
-<section id="research" class="academic-section" aria-labelledby="research-title">
-  <div class="section-heading"><h2 id="research-title">研究方向</h2><span lang="en">RESEARCH INTERESTS</span></div>
-  {% if site.data.research.size > 0 %}
-  <div class="research-list">
+{% if site.data.research.size > 0 %}
+<section id="research" class="academic-section research-interests" aria-labelledby="research-title">
+  <h2 id="research-title" class="visually-hidden">Research Interests</h2>
+  <p>My research interests include:</p>
+  <ul>
     {% for topic in site.data.research %}
-    <div class="research-item"><span class="item-number" aria-hidden="true">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><div><h3>{{ topic.title | escape }}</h3>{% if topic.description and topic.description != empty %}<p>{{ topic.description | escape }}</p>{% endif %}</div></div>
+    <li>{{ topic.title | escape }}{% if topic.description and topic.description != empty %}: {{ topic.description | escape }}{% endif %}</li>
     {% endfor %}
-  </div>
-  {% else %}
-  <div class="empty-state research-empty"><span class="empty-icon" aria-hidden="true"><i class="fas fa-compass"></i></span><div><h3>研究方向待补充</h3><p>关注的研究问题、方法与应用领域将在这里展示。</p></div></div>
-  {% endif %}
+  </ul>
 </section>
+{% endif %}
